@@ -1,17 +1,21 @@
 # ZHULAB服务器用户手册
-## 服务器规模
-
+## 服务器概况
+### 基本信息
+服务器型号为戴尔PowerEdge R740，运行在Ubuntu 20.04.6 LTS操作系统上，内核版本为5.4.0-169-generic。服务器的硬件架构为x86_64，支持32位和64位操作模式。
 ### 存储空间
+服务器中装有两个数据库存储卷：/dev/sdc(32TB)和/dev/sda1(10TB)，分别挂载于`/database`和`/database_new`。
 ### 计算资源数
+服务器配备了两颗Intel Xeon Gold 6230处理器，每颗处理器拥有20个物理核心并通过超线程技术总计提供**80**个逻辑CPU。服务器拥有**1T**的物理内存。
 ## 使用指南
 ### 登录到命令行界面
+
 ### 传递数据
 ### 配置分析环境
-1. 将miniconda3安装到[**工作目录**](#注意事项)。注意，miniconda3的默认安装位置为**主目录**而非**工作目录**，请在安装过程中进行手动修改。点击[此处](https://blog.csdn.net/suiyueruge1314/article/details/126705416)查看本步骤的一个参考流程。
+1. 将miniconda3安装到**工作目录**。注意，miniconda3的默认安装位置为**主目录**而非**工作目录**（**主目录**和**工作目录**的区分详见[注意事项](#注意事项)），请在安装过程中进行手动修改。点击[此处](https://blog.csdn.net/suiyueruge1314/article/details/126705416)查看本步骤的一个参考流程。
 ```
 bash /database/public/software/Miniconda3-latest-Linux-x86_64.sh #若想下载最新版本请访问https://docs.anaconda.com/miniconda/
 ```
-2. 运行下述代码 在conda配置miniconda的国内镜像源。
+2. 在miniconda3中配置国内镜像源。
 ```
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
